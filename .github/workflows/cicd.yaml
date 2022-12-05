@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MFEEDDOMAIN: bo.mfeeduno.com
-      
     steps:
       - uses: actions/checkout@v3
 
@@ -24,7 +21,4 @@ jobs:
 
       - name: Build App
         run: dotnet build -c Release --no-restore
-
-      - name: Testing Echo
-        run: echo "sed -i 's, localhost:44343, $MFEEDDOMAIN, g' src/MFeed/src/environments/environment.ts"
       
